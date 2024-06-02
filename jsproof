@@ -1,66 +1,41 @@
-/*
-Assessment Requirements
-1. Create a variable that can hold a number of NFT's. What type of variable might this be?
-2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+// Create a variable to hold a collection of NFTs.
+const SreekanthNFTs = [];
 
-   The metadata values will be passed to the function as parameters. When the NFT is ready, 
-   you will store it in the variable you created in step 1
-3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
-4. For good measure, getTotalSupply() should return the number of NFT's you have created
-*/
-
-// create a variable to hold your NFT's
-
-// this function will take in some values as parameters, create an
-// NFT object using the parameters passed to it for its metadata, 
-// and store it in the variable above.
-
-const HemanthNFTs  = []; // 1. Create a variable that can hold a number of NFT's. What type of variable might this be?
-
-function mintNFT (name,age,college,stream) /* 2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
-The metadata values will be passed to the function as parameters. When the NFT is ready, you will store it in the variable you created in step 1 */
-
- {
-      const NFT =
-        {
-          "name" : name ,
-          "age"  : age ,
-          "college": college ,
-          "stream" : stream ,
-        }
-      HemanthNFTs.push(NFT);
+// Function to create a new NFT with metadata and add it to the collection.
+function mintNFT(name, age, college, stream) {
+  const NFT = {
+    name,
+    age,
+    college,
+    stream,
+  };
+  SreekanthNFTs.push(NFT);
 }
 
-
-function listNFTs ()  // 3.Your listNFTs() function will print all of your NFTs metadata to the console
-{
-   for(let i=0;i<HemanthNFTs.length;i++)
-      {
-         console.log("\n");
-         console.log("Name      :"+SreekanthNFTs[i].name);
-         console.log("age       :"+SreekanthNFTs[i].age);
-         console.log("college   :"+SreekanthNFTs[i].college);
-         console.log("stream    :"+SreekanthNFTs[i].stream);
-      }
-
+// Function to print the metadata of all NFTs in the collection.
+function listNFTs() {
+  for (let i = 0; i < SreekanthNFTs.length; i++) {
+    console.log("\n");
+    console.log(`Name      : ${SreekanthNFTs[i].name}`);
+    console.log(`age       : ${SreekanthNFTs[i].age}`);
+    console.log(`college   : ${SreekanthNFTs[i].college}`);
+    console.log(`stream    : ${SreekanthNFTs[i].stream}`);
+  }
 }
 
-function getTotalSupply()  //4. For good measure, getTotalSupply() should return the number of NFT's you have created
-{
-   console.log("\n");
-   console.log(HemanthNFTs.length);
+// Function to return the total number of NFTs in the collection.
+function getTotalSupply() {
+  console.log("\n");
+  console.log(SreekanthNFTs.length);
 }
 
-// call your functions below this line
-
-mintNFT("Praven",2,"CU","CSE");
-mintNFT("Murthuz",21,"CU","CSE");
-mintNFT("Praneet",21,"IIT-K","EEE");
-mintNFT("Hemant",21,"CU","CSE");
-mintNFT("Jaga",21,"CU","CSE");
+// Call the functions.
+mintNFT("Praven", 2, "CU", "CSE");
+mintNFT("Murthuz", 21, "CU", "CSE");
+mintNFT("Praneet", 21, "IIT-K", "EEE");
+mintNFT("Hemant", 21, "CU", "CSE");
+mintNFT("Jaga", 21, "CU", "CSE");
 
 listNFTs();
 
 getTotalSupply();
-
-
